@@ -1,0 +1,35 @@
+#include<stdio.h>
+
+void bubble_sort(int arr[], int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz-1; i++)
+	{
+		int j = 0;
+		for (j = 0; j < sz - i-1; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				int tmp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = tmp;
+			}
+		}
+
+	}
+}
+int main()
+{
+	//冒泡处理法
+	int a = 0;
+	int arr[] = { 9,8,7,6,5,4,3,2,1,0 };
+	const int sz = sizeof(arr) / sizeof(arr[0]);
+	//bubble_sort(arr);这种情况我们只是传递了arr数组中第一个元素地址
+	bubble_sort(arr, sz);
+	while (a < sz)
+	{
+		printf("%d  ", arr[a]);
+		a++;
+	};
+	return 0;
+}
